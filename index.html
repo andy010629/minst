@@ -1,0 +1,56 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, user-scalable=no" />
+    <title>MNIST Canvas</title>
+
+    <!-- Bootstrap 5 -->
+
+    <!-- Latest minified CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+    <!-- Bootstrap Packaged JS (Bundle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <iframe src="tttt.mp3" allow="autoplay" id="audio" style="display: none"></iframe>
+    <audio id="player" autoplay loop>
+        <source src="tttt.mp3" type="audio/mp3">
+    </audio>
+    <div class="bg-[url(./ttt.gif)] w-full h-screen opacity-40 fixed -z-30"></div>
+
+    <div class="flex w-full h-screen justify-center items-center flex-row">
+        <div class="flex flex-col justify-center">
+            <div class="text-3xl font-bold m-4">圓框中寫出數字判斷</div>
+            <div class="shadow-2xl border-4 border-gray-900">
+                <canvas style="
+              width: 28px;
+              height: 28px;
+              background-color: black;
+              display: none;
+            " id="hiddenCanvas" width="28" height="28"></canvas>
+                <canvas id="canvas" width="280" height="280"></canvas>
+            </div>
+            <button id="clear" class="bg-gray-600 p-2 m-4 rounded text-xl font-bold text-gray-100">
+          清除畫布
+        </button>
+        </div>
+        <div id="prediction_res" class="w-96 h-96 ml-8 text-6xl font-bold flex items-center justify-center"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/onnxjs/dist/onnx.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
